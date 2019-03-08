@@ -136,15 +136,15 @@ while True:
   download_option=int(input('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m] Download using: \033[0m'))
 
   if download_option == 1:
-    print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m] Downloading, plese wait, it can take a long time...\033[0m')
+    print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m] Downloading, please wait, it can take a long time...\033[0m')
     download(choose)
 
   elif download_option == 2:
-    print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m] Downloading, plese wait, it can take a long time...\033[0m')
+    print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m] Downloading, please wait, it can take a long time...\033[0m')
     download_wget(choose)
 
   else:
-    print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m] Downloading using Python requests, plese wait, it can take a long time...\033[0m')
+    print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m] Downloading using Python requests, please wait, it can take a long time...\033[0m')
     download(choose)
    
  elif choose == 99:
