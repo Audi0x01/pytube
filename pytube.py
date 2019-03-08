@@ -11,12 +11,11 @@ default_filename='youtube_file'
 if len(sys.argv) != 2:
   print('\n    \033[1;31mpy\033[0m\033[1;77mtube v1.0\033[0m')
   print('    \033[1;77mcoded by:\033[1;31m github.com/thelinuxchoice/pytube\033[0m\n')
-  print('\n\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m]\033[0m\033[1;77m Usage: pytube.py youtube_url_code')
-  print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m]\033[0m\033[1;93m E.g.: python pytube.py Nd6qN167wKo')
+  print('\n\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m]\033[0m\033[1;77m Usage: pytube.py youtube_url_code\033[0m')
+  print('\033[1;77m[\033[0m\033[1;31m+\033[0m\033[1;77m]\033[0m\033[1;93m E.g.: python pytube.py Nd6qN167wKo\033[0m')
   exit()
 
 user_agent = 'Mozilla/5.0 (X11; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0'
-
 sess = requests.Session()
 yt_req = sess.post('https://node3.youtubnow.com/node/', headers={
         'Referer': 'https://www.youtubnow.com/',
@@ -24,7 +23,6 @@ yt_req = sess.post('https://node3.youtubnow.com/node/', headers={
         'origin': 'https://www.youtubnow.com',
         'user-agent': user_agent
  }, json={"url":"www.youtube.com/watch?v="+sys.argv[1]})
-
 params=yt_req.json()
 
 def humanbytes(B):
@@ -78,11 +76,9 @@ url_number=0
 def download_wget(url_number):
 
   if "webm" in list_type[url_number]:
-
     os.system('wget -O \'{0}.webm\' \'{1}\''.format(file_name,list_url[url_number]))
 
   elif  "mp4" in list_type[url_number]:
-
     os.system('wget -O \'{0}.mp4\' \'{1}\''.format(file_name,list_url[url_number]))
 
   else:
@@ -94,11 +90,9 @@ def download(url_number):
   sess = requests.Session()
   r = sess.get(list_url[url_number], allow_redirects=True)
   if "webm" in list_type[url_number]:
-
     open('%s.webm' % file_name, 'wb').write(r.content)
 
   elif  "mp4" in list_type[url_number]:
-
     open('%s.mp4' % file_name, 'wb').write(r.content)
 
   else:
